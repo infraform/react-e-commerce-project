@@ -1,0 +1,27 @@
+@import "../../styles/style.scss";
+
+
+.offer-tabs-content-header {
+    @include display-flex(row, unset, unset);
+    padding-left: 3rem;
+    border-bottom: 1px solid $_F2F2F2;
+  
+    & > * {
+      padding: 1.5rem 0 0.8rem 0;
+      margin-right: 2.6rem;
+      font-size: 1.5rem;
+      color: $_B1B1B1;
+    }
+  
+    .tab {
+      border: none;
+      outline: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .selected {
+    color: $_4B9CE2;
+      border-bottom: 1px solid $_4B9CE2;;
+    }
+  }
+  

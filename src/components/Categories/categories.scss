@@ -1,0 +1,38 @@
+@import "../../styles/style.scss";
+
+.category-container {
+    height: 4rem;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid $_E0E0E0;
+    .category-area {
+      @include display-flex(row, center, space-between);
+      max-width: 100%;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      & div{
+        cursor: pointer;
+      }
+  
+      &-item {
+        margin: 0 0.8rem;
+        color: $_525252;
+        padding: 0 0.3rem;
+        line-height: 3.8rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        &:hover {
+          border-bottom: 2px solid $_4B9CE2;
+        }
+      }
+      .item-active {
+        border-bottom: 2px solid $_4B9CE2;
+        color: $_4B9CE2;
+      }
+    }
+    .category-area::-webkit-scrollbar {
+      display: none;
+    }
+  }

@@ -1,0 +1,184 @@
+@import "../../styles/style.scss";
+
+.modal-wrapper{
+  @include display-flex(row, center, center);
+  position: absolute;
+  inset: 0;
+  background-color: rgba($color: $_4B9CE2, $alpha: 0.7);
+
+    .modal-info {
+        width: 48rem;
+        background-color: $_FFFFFFF;
+        border-radius: 1rem;
+
+        &-container{
+          margin: 2rem;
+
+          .modal-info-title {
+            @include display-flex(row, center, space-between);
+            width: 100%;
+            color: $_525252;
+            font-size: 3.4rem;
+          
+            & > span {
+              cursor: pointer;
+            }
+          }
+          
+          .modal-info-body {
+            margin-top: 2rem;
+            width: 100%;
+            .product-info {
+              @include display-flex(row, center, space-between);
+              height: 6rem;
+              padding: 0.6rem;
+              background-color: $_F0F8FF;
+              margin-bottom: 2rem;
+              border-radius: 0.8rem;
+              &-left {
+                @include display-flex(row, center, unset);
+                font-size: 1.3rem;
+                color: $_525252;
+                img {
+                  width: 5rem;
+                  height: 5rem;
+                  object-fit: cover;
+                  border-radius: 0.8rem;
+                  margin-right: 0.5rem;
+                }
+              }
+          
+              .product-price {
+                justify-self: flex-end;
+                font-size: 1.8rem;
+                font-weight: 700;
+                text-align: left;
+                color: $_525252;
+                margin-right: 0.5rem;
+              }
+            }
+            .offer-options {
+              width: 100%;
+              .option-custom {
+                background-color: $_F4F4F4;
+              }
+              .option {
+                @include display-flex(row, center, flex-start);
+                padding: 1.4rem 1rem;
+                border-radius: 0.8rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                border: 1px solid $_E0E0E0;
+                cursor: pointer;
+                transition: all 0.5s;
+          
+                &:hover {
+                  border: 1px solid $_4B9CE2;
+                }
+          
+                .checkbox {
+                  margin-right: 1rem;
+                  width: 2rem;
+                  height: 2rem;
+                  border: 1px solid $_E0E0E0;
+                  border-radius: 50%;
+                  position: relative;
+                  overflow: hidden;
+                }
+                .option-title {
+                  text-align: left;
+                }
+          
+                .custom-offer {
+                  @include display-flex(row, center, unset);
+                  // padding: 1.4rem 1rem;
+                  width: 100%;
+                  color: $_99A0A7;
+                  background-color: $_F4F4F4;
+                  input {
+                    width: 100%;
+                    border: none;
+                    background-color: $_F4F4F4;
+                  }
+                  input:focus,
+                  input:active {
+                    border: none;
+                    outline: none;
+                    border-radius: 0.8rem;
+                  }
+                  input::placeholder {
+                    color: $_99A0A7;
+                    font-size: 1.5rem;
+                  }
+                }
+                
+              }
+              .offer-container{
+                background-color: $_F4F4F4;
+              }
+          
+              .selected {
+                border: 1px solid $_4B9CE2;
+                background-color: $_F0F8FF;
+                color: $_4B9CE2;
+                .checkbox::after {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: url('../../constants/icons/check-icon.webp') $_4B9CE2;
+                  background-position: center center;
+                  background-repeat: no-repeat;
+                  background-size: 10px;
+                }
+              }
+          
+              .validation-warning {
+                display: block;
+                color: rgba(247, 116, 116, 1);
+                font-size: 1.2rem;
+                padding: 0 0.5rem;
+                margin-top: -0.5rem;
+                text-align: left;
+              }
+            }
+          }
+          
+          .selected-notValid {
+            border: 1px solid rgba(247, 116, 116, 1) !important;
+            background: rgba(255, 242, 242, 1) !important;
+            input:active,
+            input:focus {
+              color: red !important;
+            }
+          }
+          
+          .modal-content-footer {
+            width: 100%;
+            text-align: center;
+            .btn-offer {
+              width: 75%;
+              background-color: $_4B9CE2;
+              color: $_FFFFFFF;
+              font-size: 2.4rem;
+              border-radius: 0.8rem;
+              border: none;
+              height: 4.5rem;
+
+              &:hover {
+                background-color: rgba(240, 248, 255, 1);
+                outline: 1px solid $_4B9CE2;
+                color: $_4B9CE2;
+              }
+            }
+          }
+        }
+      
+      
+    }
+}
+
+.off-modal-wrapper{
+  display: none;
+}

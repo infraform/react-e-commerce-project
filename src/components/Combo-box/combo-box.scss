@@ -1,0 +1,82 @@
+@import '../../styles/style.scss';
+
+.combobox-wrapper {
+    position: relative;
+    color: $_F4F4F4;
+  }
+  .combobox-list {
+    height: 15rem;
+    overflow-y: auto;
+    background-color: $_F4F4F4;
+    box-shadow: 0px 3px 12px rgba(30, 54, 72, 0.18);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    @include screenSize('large') {
+      font-size: 1.4rem;
+    }
+  }
+  .combobox-list:focus,
+  .combobox-list:focus-visible,
+  .combobox-list:focus-within {
+    border: none !important;
+    outline: none !important;
+  }
+  .combobox-btn {
+    position: relative;
+    width: 94%;
+    @include screenSize('medium') {
+      width: 100%;
+    }
+    height: 4.5rem;
+    background-color: $_FFFFFFF;
+    color: $_B1B1B1;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    @include screenSize('xlarge') {
+      font-size: 1.4rem;
+    }
+  }
+  .valid {
+    color: rgba(62, 62, 62, 1);
+    background-color: $_F0F8FF;
+    border: 1px solid $_4B9CE2 !important;
+  }
+  [data-reach-listbox-arrow] {
+    position: absolute;
+    right: 1rem;
+  }
+  
+  [data-reach-listbox-popover] {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none;
+    border-radius: 0.8rem;
+    top: 0px !important;
+    width: 90%;
+    z-index: 3;
+    @include screenSize('medium') {
+      width: 100%;
+    }
+  }
+  
+  [data-reach-listbox-popover]:focus-within {
+    box-shadow: 0px 3px 12px rgba(30, 54, 72, 0.18) !important;
+    outline: -webkit-focus-ring-color auto 4px;
+  }
+  
+  .combobox-item {
+    height: 3.8rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.8rem;
+    line-height: 3.8rem;
+    width: 95%;
+    margin-left: 0.5rem !important;
+    text-transform: capitalize;
+  
+    &:hover {
+      background-color: $_F2F2F2 !important;
+      color: $_4B9CE2 !important;
+    }
+  }

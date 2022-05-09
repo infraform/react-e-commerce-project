@@ -1,0 +1,197 @@
+@import "../../styles/style.scss";
+
+.add-product-content-wrapper {
+  font-family: 'Nunito', sans-serif;
+  @include display-flex(row,unset,unset);
+  @include screenSize("medium") {
+    @include display-flex(column,unset,unset);
+    width: 100%;
+  }
+  
+  .right-side{
+    width: 45.46%;
+    @include screenSize('medium') {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .add-product-content-detail-wrapper{
+    width: 54.54%;
+    border-right: 1px solid $_F2F2F2;
+    @include screenSize('medium') {
+      width: 100%;
+      border-right: none;
+    }
+  }
+
+  .add-product-content-detail{
+    max-width: 73rem;
+    padding-left: 0.1rem;
+    label {
+      color: $_525252;
+      font-size: 1.5rem;
+    }
+    input{
+      background-color: $_F4F4F4;
+      height: 4.5rem;
+      font-size: 1.6rem;
+      border: none;
+      border-radius: 0.8rem;
+      outline: none;
+      margin: 0.5rem 0;
+      
+      padding-left: 1rem;
+    }
+    textarea {
+      background-color: $_F4F4F4;
+      font-size: 1.6rem;
+      border: none;
+      border-radius: 0.8rem;
+      outline: none;
+      margin: 0.5rem 0;
+      resize: none;
+      width: 100%;
+      height: 9.2rem;
+      
+      padding-left: 1rem;
+      @include screenSize("medium") {
+        margin-bottom: 1rem;
+        padding: 1rem 0.15rem;
+      }
+    }
+    input:active,
+    textarea:active,
+    input:focus,
+    textarea:focus {
+      outline: 1px solid $_4B9CE2;
+      background-color: $_F0F8FF;
+    }
+  
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(153, 160, 167, 1);
+      padding:0.5rem;
+      @include screenSize("large") {
+        padding: 0.5rem 1rem;
+        font-size: 1.4rem;
+      }
+    }
+  
+    .form-row {
+      width: 100%;
+      margin-bottom: 2.5rem;
+      @include display-flex(column);
+      @include screenSize("medium") {
+        width: 100%;
+      }
+    }
+
+    .price-row{
+      width:32.32%;
+      position: relative;
+      @include screenSize("large") {
+        width: 80%;
+      }
+      @include screenSize("medium") {
+        width: 100%;
+      }
+    }
+    .price-row p{
+      position: absolute;
+      font-size: 1.6rem;
+      top: 50%;
+      left: 80%;
+      color: rgba(153, 160, 167, 1);
+      @include screenSize("medium") {
+        left: 90%;
+      }
+      & > span {
+        color: $_F77474 !important;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        padding: 0 1rem;
+      }
+    }
+  
+    .offer-row {
+      @include display-flex(row, center, space-between);
+      width:32.32%;
+  
+      .offeropt {
+        margin-right: 1rem;
+        color: $_3E3E3E;
+      }
+      @include screenSize("large") {
+        width: 80%;
+      }
+      @include screenSize("medium") {
+        width: 100%;
+      }
+    }
+  
+    .form-row-multi {
+      @include display-flex(row, center, space-between);
+      width: 100%;
+      margin-bottom: 2.5rem;
+      @include screenSize("medium") {
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+      .input-group {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        label {
+          display: block;
+          color: $_525252;
+        }
+      }
+    }
+  }
+  
+}
+
+.custom-select{
+  width: 96.71%;
+  position: relative;
+  margin-top:0.5rem;
+  height: 4.5rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0.8rem;
+  outline: none;
+  padding-left: 1rem;
+  background-color: $_F4F4F4;
+  @include screenSize("medium") {
+    margin-bottom: 1rem;
+    padding: 1rem 0.15rem;
+    width: 100%;
+  }
+}
+
+.save-btn{
+  width: 16.4vw;
+  height: 4.5rem;
+  border: none;
+  border-radius: 0.8rem;
+  outline: none;
+  background-color: $_4B9CE2;
+  color: $_FFFFFFF;
+  font-size: 1.6rem;
+  margin-top: 48.4rem;
+  float: right;
+  @include screenSize("medium") {
+    margin-top: 15rem;
+    margin-bottom: 1rem;
+    float: none;
+    width: 100%;
+  }
+}
+
+.not-valid {
+  border: 1px solid $_F77474 !important;
+  background-color: $_FFF2F2 !important;
+  color: $_F77474 !important;
+}
+.not-valid-ico {
+  color: $_F77474 !important;
+}

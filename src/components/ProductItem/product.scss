@@ -1,0 +1,72 @@
+@import "../../styles/style.scss";
+
+.card__item {
+    @include display-flex(column, unset, space-between);
+    padding: 1rem;
+    background-color: $_FFFFFFF;
+    border-radius: 0.8rem;
+    width: 26rem;
+    height: 39rem;
+    cursor: pointer;
+    
+    @include screenSize('small') {
+      width: 17rem;
+      height: 26.6rem;
+      padding: 0.6rem;
+    }
+    &-img {
+      overflow: hidden;
+      border-radius: 0.8rem;
+      min-height: 85%;
+      @include screenSize('small') {
+        min-height: 72%;
+        max-height: 72%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .card__item-content {
+      @include display-flex(column, unset, space-between);
+    }
+    &-info {
+      @include display-flex(row, unset, space-between);
+      margin: 1rem 0;
+      text-transform: capitalize;
+      @include screenSize('small') {
+        @include display-flex(column, unset, unset);
+      }
+      &-brand {
+        color: $_4B9CE2;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      &-color {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: $_3E3E3E;
+        @include screenSize('small') {
+          margin-top: 0.5rem;
+        }
+  
+        & > b {
+          font-weight: 700;
+        }
+      }
+    }
+    &-price {
+      margin: 0.5rem 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      &::after {
+        content: 'TL';
+        display: inline-block;
+        margin-left: 0.4rem;
+      }
+      @include screenSize('small') {
+        font-size: 1.5rem;
+      }
+    }
+  }

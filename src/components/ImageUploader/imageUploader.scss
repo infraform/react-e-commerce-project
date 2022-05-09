@@ -1,0 +1,44 @@
+@import "../../styles/style.scss";
+
+.uploader-container {
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  
+
+  .uploader-wrapper {
+    float: right;
+    width: 92.6%;
+    height: 16.4rem;
+    h1 {
+        padding-top: 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+        color: $_525252;
+        @include screenSize('medium') {
+          font-size: 2rem;
+        }
+      }
+      @include screenSize('medium') {
+        width: 100%;
+      }
+  }
+  .uploader-content{
+      width: 16.6rem;
+      margin: 0 auto;
+  }
+  .uploader-content-button{
+    width: 12.2rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+    border: none;
+    background-color: $_F2F2F2;
+  }
+  .uploader-info-warning{
+      width: 21.8rem;
+      font-size: 1.2rem;
+      margin: 1rem auto 2rem auto;
+      color: $_B1B1B1;
+
+  }
+}

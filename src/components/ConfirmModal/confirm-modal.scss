@@ -1,0 +1,70 @@
+@import "../../styles/style.scss";
+
+.confirm-modal{
+  @include display-flex(row, center, center);
+  position: absolute;
+  inset: 0;
+  background-color: rgba($color: $_4B9CE2, $alpha: 0.7);
+
+  &-info{
+    @include display-flex(column, center, unset);
+    max-width: 95vw;
+    padding: 1rem 2rem;
+    background-color: $_FFFFFFF;
+    box-shadow: 0px 3px 12px rgba(30, 54, 72, 0.18);
+    border-radius: 0.8rem;
+    @include screenSize('medium') {
+      margin-top: 1rem;
+    }
+    & > * {
+        padding: 1rem 0.6rem;
+      }
+      &-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $_525252;
+        margin: 0 auto;
+        font-family: 'Nunito', sans-serif;
+      }
+      &-body {
+        font-size: 1.5rem;
+        color: #555555;
+        margin: 0 auto;
+        font-family: 'Nunito', sans-serif;
+      }
+  
+      .btn {
+        height: 4.5rem;
+        padding: 1rem 4rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 0.8rem;
+        transition: all 0.6s;
+      }
+  
+      .cancel {
+        background-color: $_F0F8FF;
+        color: $_4B9CE2;
+        margin-right: 0.5rem;
+        outline: 1px solid transparent;
+        &:hover {
+          outline: 1px solid $_4B9CE2;
+        }
+      }
+      .confirm {
+        background-color: $_4B9CE2;
+        color: $_FFFFFFF;
+        margin-left: 0.5rem;
+        &:hover {
+          background-color: $_F0F8FF;
+          outline: 1px solid $_4B9CE2;
+          color: $_4B9CE2;
+        }
+      }
+  }
+}
+
+.off-confirm-modal{
+    display: none;
+}
