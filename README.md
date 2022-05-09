@@ -1,17 +1,15 @@
-<div align='center'>
-    <div>
-        <img src='./src/constants/icons/handshake.svg' alt='handshake' width='30px'  />
-    </div>
+<div align='center'>    
     <br/>
     <br/>
     <img src='./src/constants/icons/logo.svg' alt='ikinci-el-logo' width='250px' />
-
 </div>
 
 <br/>
 <br/>
 
-It is the graduation project of React bootcamp, which is realized in cooperation with Protein' tech and Patika.dev.
+## Description
+
+E-commerce application built with React.js, Axios, Context Api, Formik, Yup and SASS for the frontend; [Swagger API](https://bootcamp.akbolat.net/documentation/v1.0.0#/) for the backend. And we used Docker for containerization of the application. We triggered the GitHub Actions build process by pushing the code to the GitHub repository. Used DockerHub as container registry to push our Docker images. We used AWS CloudFormation as the Infrastructure as Code solution for deployment the application on AWS EC2 instance.
 
 You can access the live demo from the link here: [ <b> Live Demo</b> ](https://protein-patika-graduation-burak-caniklioglu.netlify.app/)
 
@@ -22,10 +20,9 @@ You can access the live demo from the link here: [ <b> Live Demo</b> ](https://p
 - [Installation](#installation)
 - [Previews](#previews)
 - [App Performance](#app-performance)
+  <br>
 
-<br>
-
-# About
+## About
 
 - Second Hand Project is an e-commerce site that provides its users with the functionality to add, buy and sell products.
 
@@ -65,23 +62,36 @@ You can access the live demo from the link here: [ <b> Live Demo</b> ](https://p
 - First, clone the project:
 
 ```
-git clone https://github.com/burak-caniklioglu/ikinci-el-project.git
+git clone https://github.com/infraform/react-e-commerce-project.git
 ```
 
-- Then, start the project on localhost:
+- Install dependencies with npm
 
 ```
-# install dependencies with npm
 npm install
-# or install dependencies with yarn
+```
+
+- or install dependencies with yarn
+
+```
 yarn install
-
-# serve at localhost:3000
-npm start or yarn start
 ```
 
+- Start the project on localhost port 3000
+
 ```
-# test
+npm start
+```
+
+or
+
+```
+ yarn start
+```
+
+- Test the project
+
+```
 yarn run cypress open
 'click' ikinciElLoginRegister.test.js
 ```
