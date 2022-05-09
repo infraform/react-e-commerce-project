@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: >
+  This CloudFormation Template creates a Docker engine on EC2 Instance for React Commerce
+  App. Docker Machine will run on Amazon Linux 2 EC2 Instance with
+  custom security group allowing SSH connections from anywhere on port 22.
+
+Parameters:
+  KeyPairName:
+    Description: Enter the name of your Key Pair for SSH connections.
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstraintDescription: Must one of the existing EC2 KeyPair
+
+Resources:
+  DockerMachineSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH for Docker Machine
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+
+  DockerMachine:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-09d95fab7fff3776c
+      InstanceType: t2.micro
+      KeyName: !Ref KeyPairName
+      SecurityGroupIds:
+        - !GetAtt DockerMachineSecurityGroup.GroupId
+      Tags:
+        - Key: Name
+          Value: !Sub Docker Machine of ${AWS::StackName}
+      UserData:
+        Fn::Base64: |
+          #! /bin/bash
+          yum update -y
+          amazon-linux-extras install docker -y
+          systemctl start docker
+          systemctl enable docker
+          usermod -a -G docker ec2-user
+          newgrp docker
+          docker pull devenes/react-commerce:1
+          docker run -d -p 80:3000 --name react-commerce-app devenes/react-commerce:1
+
+Outputs:
+  WebsiteURL:
+    Description: Docker Machine DNS Name
+    Value: !Sub
+      - ${PublicAddress}
+      - PublicAddress: !GetAtt DockerMachine.PublicDnsName
