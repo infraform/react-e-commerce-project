@@ -1,0 +1,48 @@
+@import '../../styles/style.scss';
+
+
+.login-register-main {
+    background-color: $_FBFBFB;
+    @include display-flex(row,center);
+    overflow-y: hidden;
+    @include screenSize('medium') {
+      background-color: $_F2F2F2;
+      
+    }
+    
+
+    .login-register-banner {
+      height: 100vh;
+      
+  
+      @include screenSize('medium') {
+        display: none;
+
+      }
+  
+      img {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .login-register-area{
+      width: 63%;
+      min-height: 100vh;
+      margin: 0 auto;
+        @include display-flex(column, center);
+        @include screenSize('medium') {
+        width: 100%; 
+      }
+      .login-register-logo{
+        margin-top: 10.3vh;
+        @include screenSize('medium') {
+          margin-top: 2%; 
+        }
+      }
+
+      
+    }
+    
+  }

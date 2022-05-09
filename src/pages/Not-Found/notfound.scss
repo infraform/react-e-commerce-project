@@ -1,0 +1,71 @@
+@import "../../styles/style.scss";
+
+
+.error-container{
+  max-width: 148rem;
+  margin: 0 auto;
+  padding-top: 10rem;
+
+  @include screenSize('xxlarge') {
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+}
+
+.error-wrapper {
+    @include display-flex(column, center, center);
+    width: 60%;
+    @include screenSize('medium') {
+      width: 90%;
+    }
+  
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: $_F0F8FF;
+    border: 1px solid $_4B9CE2;
+    border-radius: 0.8rem;
+    text-align: start;
+  
+    .error-img {
+      width: 10rem;
+      padding: 1rem;
+      img {
+        width: 100%;
+      }
+    }
+  
+    .error-message {
+      font-size: 2.5rem;
+      color: $_525252;
+      text-align: center;
+      & > p {
+        padding: 0 0 2rem 0;
+      }
+    }
+  
+    .error-link {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      color: $_4B9CE2;
+      font-style: italic;
+      position: relative;
+  
+      &:hover {
+        color: darken($_4B9CE2, 40%);
+      }
+    }
+  
+    .error-link::before {
+      content: '';
+      width: 100%;
+      height: 9px;
+      display: inline-block;
+      background: url('../../constants/icons/right.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 1px;
+      left: -11rem;
+    }
+  }
+  

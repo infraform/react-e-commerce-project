@@ -1,0 +1,87 @@
+@import "../../styles/style.scss";
+
+.account-container {
+  min-height: calc(100vh) !important;
+  width: 100%;
+  background-color: $_F2F2F2;
+  padding-top: 10rem;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  @include screenSize("medium") {
+    min-height: calc(100vh);
+    padding-top:7rem;
+  }
+
+  .account-wrapper {
+    max-width: 148rem;
+    margin: 0 auto;
+    @include screenSize("xxlarge") {
+      max-width: 120rem;
+    }
+    @include screenSize("small") {
+      width: calc(100vw - 2rem);
+      margin: 1rem auto;
+
+    }
+    
+
+    .account-info {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 0.8rem;
+
+      &-wrapper {
+        @include display-flex(row, center, space-between);
+        max-width: 146rem;
+        
+        .btn-logout{
+          font-size: 1.5rem;
+          color: $_FFFFFFF;
+          width: 10.8rem;
+          height: 3rem;
+          line-height: 3rem;
+          border: none;
+          border-radius: 0.8rem;
+          background-color: $_F77474;
+          margin-right: 2rem;
+          @include screenSize("small") {
+            margin-right: 1rem;
+      
+          }
+        }
+
+
+        .profile-wrapper{
+          @include display-flex(row, center, flex-start);
+
+        padding: 0.8rem 3rem;
+          p {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(82, 82, 82, 1);
+            background-color: rgba(255, 255, 255, 1);
+          }
+        }
+        
+      }
+    }
+
+    .account-content {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 0.8rem;
+      margin-top: 1rem;
+      
+      .offer-list {
+        margin-top: 1.5rem;
+        padding: 0 3rem;
+        overflow-x: hidden;
+        max-height: calc(100vh - 24rem);
+        @include screenSize("medium") {
+          max-height: calc(100vh - 22rem);
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}

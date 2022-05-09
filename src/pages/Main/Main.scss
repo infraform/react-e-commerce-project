@@ -1,0 +1,28 @@
+@import "../../styles/style.scss";
+
+.main-section {
+  min-height: calc(100vh);
+  width: 100%;
+  overflow-y: auto;
+  padding-top: 8rem;
+  background-color: $_F2F2F2;
+  @include screenSize("medium") {
+    min-height: calc(100vh);
+    padding-top: 6rem;
+
+  }
+
+  .main-container {
+    padding-top: 2rem;
+    max-width: 1480px;
+    margin: 0 auto;
+    @include screenSize("xxlarge") {
+      max-width: 120rem;
+    }
+    @include screenSize("medium") {
+      width: calc(100vw - 2rem);
+      margin: 0 auto;
+      padding-top: 1rem;
+    }
+  }
+}
