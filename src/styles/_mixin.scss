@@ -1,0 +1,48 @@
+/* Mixin for media queries */
+
+@mixin screenSize($size) {
+    @if ($size == 'xxlarge') {
+      @media screen and ( max-width:1400px  ) {
+        @content;
+      }
+    }
+  
+    @if ($size == 'xlarge') {
+      @media screen and (max-width: 1200px) {
+        @content;
+      }
+    }
+    @if ($size == 'large') {
+      @media screen and (max-width: 992px) {
+        @content;
+      }
+    }
+    @if $size== 'medium' {
+      @media screen and (max-width: 768px) {
+        @content;
+      }
+    }
+    @if $size== 'small' {
+      @media screen and (max-width: 576px) {
+        @content;
+      }
+    }
+    @if $size== 'xsmall' {
+      @media screen and (max-width: 480px) {
+        @content;
+      }
+    }
+  }
+  
+  /* Mixin for flexbox */
+  
+  @mixin display-flex(
+    $flex-direction: row,
+    $align-items: unset,
+    $justify-content: unset
+  ) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+  }
