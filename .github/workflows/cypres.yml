@@ -20,5 +20,4 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
-# yarn run cypress open
-# 'click' ikinciElLoginRegister.test.js
+        run: yarn run cypress open
