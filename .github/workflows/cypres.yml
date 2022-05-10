@@ -1,0 +1,29 @@
+name: GitHub Actions Demo
+
+on: [pull_request]
+
+on: [push]
+
+jobs:
+  
+ cypress-run:
+   
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+            node:version: '14'
+
+      - name: Install dependencies
+        run: yarn install       
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+
+# yarn run cypress open
+# 'click' ikinciElLoginRegister.test.js
