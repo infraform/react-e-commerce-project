@@ -38,8 +38,6 @@ You can access the live demo from the link here: [ <b> Live Demo</b> ](https://p
 
 - The application is designed for web and mobile. All UI designs are responsive.
 
-<br>
-
 ## Used Packages And Modules
 
 - React JS
@@ -55,46 +53,42 @@ You can access the live demo from the link here: [ <b> Live Demo</b> ](https://p
 - Cypress
 - Netlify
 
-<br>
-
 ## Installation
 
 - First, clone the project:
 
-```
-git clone https://github.com/infraform/react-e-commerce-project.git
-```
+  ```
+  git clone https://github.com/infraform/react-e-commerce-project.git
+  ```
 
 - Install dependencies with npm
 
-```
-npm install
-```
+  ```
+  npm install
+  ```
 
 - or install dependencies with yarn
 
-```
-yarn install
-```
+  ```
+  yarn install
+  ```
 
-- Start the project on localhost port 3000
+- Start the project on localhost port: 3000 with using npm or yarn
 
-```
-npm start
-```
+  ```
+  npm start
+  ```
 
-or
-
-```
- yarn start
-```
+  ```
+  yarn start
+  ```
 
 - Test the project
 
-```
-yarn run cypress open
-'click' ikinciElLoginRegister.test.js
-```
+  ```
+  yarn run cypress open
+  'click' ikinciElLoginRegister.test.js
+  ```
 
 # Previews
 
