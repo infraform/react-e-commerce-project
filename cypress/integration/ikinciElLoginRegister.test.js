@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 describe('Login Register Events', () => {
   it('Login events', () => {
-    cy.visit('https://protein-patika-graduation-burak-caniklioglu.netlify.app/login');
+    cy.visit('https://localhost:3000/login');
     cy.wait(1000);
     cy.contains('Giriş Yap');
     cy.contains('Şifremi Unuttum');
