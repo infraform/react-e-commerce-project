@@ -83,11 +83,10 @@ You can access the live demo from the link here: [ <b> Live Demo</b> ](https://p
   yarn start
   ```
 
-- Test the project
+- Test the project by running Cypress tests and clicking `ikinciElLoginRegister.test.js`
 
   ```
   yarn run cypress open
-  'click' ikinciElLoginRegister.test.js
   ```
 
 # Previews
